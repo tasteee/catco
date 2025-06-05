@@ -1,33 +1,25 @@
 {
   "name": "catco",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "module",
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.js",
   "description": "Glob copy file contents to ya clipboard.",
-  "exports": {
-    "import": "./dist/index.js",
-    "require": "./dist/index.cjs"
-  },
   "scripts": {
-    "build": "tsx",
+    "build": "pkgroll",
     "start": "tsx src/index.ts ./src/**/*.ts"
   },
   "files": [
     "dist"
   ],
-  "keywords": [
-    "ai",
-    "ai-assistant",
-    "ai-tools",
-    "gpt",
-    "copy",
-    "clipboard",
-    "claude",
-    "chatgpt",
-    "chatgpt4o",
-    "chatgpt4o-mini"
-  ],
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "exports": {
+    "import": {
+      "default": "./dist/index.mjs"
+    },
+    "require": {
+      "default": "./dist/index.cjs"
+    }
+  },
   "bin": {
     "catco": "./dist/index.js"
   },
@@ -40,7 +32,7 @@
   "bugs": "https://github.com/tasteee/catco/issues",
   "author": "tasteink <rocolcleasure@gmail.com>",
   "devDependencies": {
-    "@types/minimist": "^1.2.5",
+    "pkgroll": "^2.12.2",
     "prettier": "^3.5.3",
     "tsx": "^4.19.2",
     "typescript": "^5.6.3",
@@ -48,12 +40,21 @@
   },
   "dependencies": {
     "clipboardy": "^4.0.0",
-    "globby": "^14.0.2",
-    "meow": "^13.2.0",
-    "minimist": "^1.2.8",
-    "sade": "^1.8.1"
+    "globby": "^14.0.2"
   },
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "keywords": [
+    "ai",
+    "ai-assistant",
+    "ai-tools",
+    "gpt",
+    "copy",
+    "clipboard",
+    "claude",
+    "chatgpt",
+    "chatgpt4o",
+    "chatgpt4o-mini"
+  ]
 }

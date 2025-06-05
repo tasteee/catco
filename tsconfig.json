@@ -3,14 +3,17 @@
     "target": "es2020",
     "module": "esnext",
     "strict": true,
-    "esModuleInterop": true,
     "moduleResolution": "bundler",
     "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowJs": true,
+    "resolveJsonModule": true,
     "noUnusedLocals": true,
     "noImplicitAny": true,
-    "allowJs": true,
-    "noEmit": true,
     "outDir": "dist",
-    "resolveJsonModule": true
-  }
+    "declaration": true,
+    "declarationDir": "dist",
+    "emitDeclarationOnly": true
+  },
+  "include": ["src"]
 }
